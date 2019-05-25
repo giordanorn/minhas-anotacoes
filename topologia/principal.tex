@@ -7,7 +7,7 @@ As notas estão bem desorganizadas, como se pode perceber. Ainda organizarei tud
 
 Considere $X$ não vazio e $\caligrafico{N}$ uma família de subconjuntos de $X$. 
 
-\begin{definition}[Sistema de Vizinhança]
+\begin{definition}[Sistema de vizinhança --- Neighbourhood system]
 	Chamamos $\caligrafico{N}$ de um sistema de vizinhança no $X$ se, e somente se:
 \begin{enumerate}[a)]
 \item
@@ -18,15 +18,15 @@ Considere $X$ não vazio e $\caligrafico{N}$ uma família de subconjuntos de $X$
 \end{enumerate}
 \end{definition}
 
-\begin{definition}[Espaço Topológico]
+\begin{definition}[Espaço topológico --- Topological space]
 	Suponha que $\caligrafico{N}$ é um sistema de vizinhança no $X$, então chamamos a estrutura $\caligrafico{T} = (X ; \caligrafico{N})$ de espaço topológico.
 \end{definition}
 
 
-\begin{definition}[Conjunto Aberto]
-	Chamamos um subconjunto $O$ de $X$ de aberto se, e somente se, todos os seus elementos habitam em uma vizinhança. Mais formalmente:
+\begin{definition}[Aberto --- Open]
+	Chamamos um subconjunto $O$ de $X$ de aberto se, e somente se, todos os seus elementos habitam em pelo menos uma vizinhança contida no $O$. Mais formalmente:
 	\begin{center}
-		$O$ é aberto \sse para todo $p \no O$, existe $N \no \caligrafico{N}$ tal que $p \no N$.
+		$O$ é aberto \sse para todo $p \no O$, existe $N \no \caligrafico{N}$ tal que $p \no N$ e $N \contido O$.
 	\end{center}
 \end{definition}
 
@@ -35,9 +35,24 @@ Considere $X$ não vazio e $\caligrafico{N}$ uma família de subconjuntos de $X$
 \end{fact}
 
 \begin{proof}
-	Considere uma vizinhança $N \no \caligrafico{N}$. Tome um arbitrário $p \no N$. Agora basta mostrar que o $p$ habita em alguma vizinhança. Ora, como o $N$ já é uma vizinhança e já temos que $p \no N$, então $N$ é aberto.
+	Considere uma vizinhança $N \no \caligrafico{N}$. Tome um arbitrário $p \no N$. Agora basta mostrar que o $p$ habita em alguma vizinhança contido no $N$. Ora, como $N \contido N$, $N$ já é uma vizinhança e já temos que $p \no N$, então $N$ é aberto.
 \end{proof}
 
 \begin{definition}
 	A topologia gerada por \caligrafico{N} é a família \caligrafico{O} de todos os seus conjuntos abertos.
+\end{definition}
+
+\begin{definition}[Limit point]
+	Dado $A \contido X$, dizemos que $p$ é um \textit{limit point} de $A$ se, e somente se, em toda vizinhança que o $p$ habita há pelo menos um elemento diferente do $p$ que também habita nela. Mais formalmente:
+	\begin{center}
+		$p$ é limit point de $A$ \sse todo $N$ que o $p$ habita tem um $q \no N$ tal que $q \neq p$. 
+	\end{center}
+\end{definition}
+
+\begin{definition}
+	Chamamos de $A^\linha$ o conjunto de todos os limit points de $A$.
+\end{definition}
+
+\begin{definition}[Fechado --- Closed]
+	Seja $A \contido X$, chamamos o $A$ de fechado se, e somente se, $A$ possui todos os seus limit points. Em outras palavras, $A^\linha \contido A$.
 \end{definition}

@@ -3,6 +3,7 @@ DOCUMENT_NAME	= main
 DOCUMENT_PATH	= .
 BUILD_PATH		= ./build
 OUTPUT_PATH		= .
+OUTPUT_NAME		= minhas-anotacoes
 WEBSITE_PATH	= ../pages/giordanorn.github.io
 
 # COMPILING OPTIONS
@@ -41,4 +42,4 @@ cleanall: clean
 	rm -f $(OUTPUT_PATH)/$(DOCUMENT_NAME).pdf
 
 deploy:
-	cp $(OUTPUT_PATH)/$(DOCUMENT_NAME).pdf $(WEBSITE_PATH)/minhas-notas.pdf
+	cp $(OUTPUT_PATH)/$(DOCUMENT_NAME).pdf $(WEBSITE_PATH)/$(OUTPUT_NAME).pdf
