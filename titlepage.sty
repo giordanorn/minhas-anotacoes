@@ -1,0 +1,37 @@
+\title{Livrinho com minhas anotações de estudo}
+\author{Giordano V. O. F. Rodrigues}
+
+\newcommand{\printtitle}
+{
+    \begin{center}
+        \makeatletter
+        \LARGE\textbf{\uppercase{\@title}}
+        \makeatother
+    \end{center}
+}
+\newcommand{\printauthor}
+{
+    \begin{center}
+        \makeatletter
+        \large\@author
+        \makeatother
+    \end{center}
+}
+\newcommand{\printdate}
+{
+    \begin{center}
+        \normalsize \today
+    \end{center}
+}
+
+
+\newcommand{\printtitlepage}
+{
+    \thispagestyle{empty}
+    \printtitle
+    \printdate
+    \vfill
+    \printauthor
+}
+
+
