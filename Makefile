@@ -3,6 +3,7 @@ DOCUMENT_NAME	= main
 DOCUMENT_PATH	= .
 BUILD_PATH		= ./build
 OUTPUT_PATH		= .
+WEBSITE_PATH	= ../pages/giordanorn.github.io
 
 # COMPILING OPTIONS
 COMPILER		= pdflatex
@@ -40,4 +41,4 @@ cleanall: clean
 	rm -f $(OUTPUT_PATH)/$(DOCUMENT_NAME).pdf
 
 deploy:
-	@echo "Available soon."
+	cp $(OUTPUT_PATH)/$(DOCUMENT_NAME).pdf $(WEBSITE_PATH)/minhas-notas.pdf
