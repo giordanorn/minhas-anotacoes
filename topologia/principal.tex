@@ -8,13 +8,16 @@ As notas estão bem desorganizadas, como se pode perceber. Ainda organizarei tud
 Considere $X$ não vazio e $\caligrafico{N}$ uma família de subconjuntos de $X$. 
 
 \begin{definition}[Sistema de vizinhança --- Neighbourhood system]
+	\label{def:sistema-de-vizinhanca}
 	Chamamos $\caligrafico{N}$ de um sistema de vizinhança no $X$ se, e somente se:
-\begin{enumerate}[a)]
-\item
-	Todo elemento $p \no X$ habita em pelo menos uma vizinhança $N \no \caligrafico{N}$. Mais formalmente, para todo $p \no X$, existe $N \in \caligrafico{N}$ tal que $p \no N$.
+	\begin{enumerate}[a)]
+	\item
+		\label{def:sistema-de-vizinhanca1}
+		Todo elemento $p \no X$ habita em pelo menos uma vizinhança $N \no \caligrafico{N}$. Mais formalmente, para todo $p \no X$, existe $N \in \caligrafico{N}$ tal que $p \no N$.
 
-\item
-	Se algum $p$ habita em duas vizinhanças $N_1$ e $N_2$, então deve existir uma terceira vizinhança $N \contido N_1 \inter N_2$ em que o $p$ habita. Mais formalmente, se $p \no N_1 \cap N_2$, então existe $N \contido N_1 \inter N_2$ tal que $p \no N$.
+	\item
+		\label{def:sistema-de-vizinhanca2}
+		Se algum $p$ habita em duas vizinhanças $N_1$ e $N_2$, então deve existir uma terceira vizinhança $N \contido N_1 \inter N_2$ em que o $p$ habita. Mais formalmente, se $p \no N_1 \cap N_2$, então existe $N \contido N_1 \inter N_2$ tal que $p \no N$.
 \end{enumerate}
 \end{definition}
 
@@ -56,3 +59,39 @@ Considere $X$ não vazio e $\caligrafico{N}$ uma família de subconjuntos de $X$
 \begin{definition}[Fechado --- Closed]
 	Seja $A \contido X$, chamamos o $A$ de fechado se, e somente se, $A$ possui todos os seus limit points. Em outras palavras, $A^\linha \contido A$.
 \end{definition}
+
+\begin{question}
+	\label{universo-fechado}
+	\label{vazio-fechado}
+	O que dizer sobre os $X$ e $\vazio$? São fechados?
+\end{question}
+
+\begin{answer}
+	Ambos são fechados. Primeiramente, demonstremos que X é fechado.
+	\begin{proof}
+		Precisamos demonstrar que $X$ possui todos os seus limit points. Ora, como $X$ é o nosso universo, já temos que qualquer possível limit point de $X$ já habita no $X$. Sendo assim $X^\linha \contido X$.
+	\end{proof}
+
+	Agora, demonstremos que o $\vazio$ é fechado.
+	\begin{proof}
+		Considere $p \no X$. Basta mostrar que $p$ não é limit point do $\vazio$. Note que, existe $N \no \caligrafico{N}$ tal que $p \no N$ pelo item~\ref{def:sistema-de-vizinhanca1}. E, como $N \inter \vazio = \vazio$, temos que os $N$ e $\vazio$ não partilham elementos diferentes do $p$. Portanto $\vazio^\linha \contido \vazio$.
+	\end{proof}
+\end{answer}
+
+\begin{question}
+	Um conjunto unitário é fechado?
+\end{question}
+
+\begin{answer}
+	Depende. Há casos que é fechado e casos que não é fechado.
+	
+	Mostremos um caso que é fechado.
+	\begin{proof}	
+		Basta tomar seu universo como sendo $X = \conjunto{a}$. Com isso, teremos que o $X$ é unitário. E, como já demonstramos em \ref{universo-fechado} que todo universo é fechado, já terminamos. 
+	\end{proof}
+
+	Agora, mostremos um caso que não é fechado.
+	\begin{proof}
+		Basta tomar seu universo como sendo $X = \conjunto{a,l}$, e o sistema de vizinhanças $\caligrafico{N} = \conjunto{X}$. Com isso, teremos que o conjunto unitário $A = \conjunto{a} \contido X$ não é fechado. Observe que $l$ é um limit point de $A$, pois a única vizinhança do $l$, que é o próprio $X$, partilha elementos de $A$ que não são o $l$, no caso o $a$. Porém, $b \fora\no A$. Portanto, o $A$ não é fechado mesmo sendo unitário.
+	\end{proof}
+\end{answer}
