@@ -4,36 +4,57 @@ Estas anotações estão fortemente relacionadas ao curso de topologia lecionado
 As notas estão bem desorganizadas, como se pode perceber. Ainda organizarei tudo direitinho quando puder.
 
 \section{Minhas anotações}
+Para começarmos a estudar os conceitos de topologia, precisamos de um conjunto $X$ não-vazio, e uma família $\caligrafico{N}$ formada por subconjuntos de $X$. A seguir definiremos algumas notações:
+\begin{itemize}
+	\item Chamamos o conjunto $X$ de universo.
+	\item Chamamos os elementos $p \no X$ de pontos.
+	\item Chamamos os elementos $N \no \caligrafico{N}$ de vizinhanças.
+	\item Se acontece que $p \no X$ pertence à alguma vizinhança $N \no \caligrafico{N}$, chamamos o $N$ de uma vizinhança do $p$. Com isso, podemos definir o predicado abaixo:
+	\begin{center}
+		$N$ é uma vizinhança do $p$ \sse $p \no N$.
+	\end{center}
+\end{itemize}
 
-Considere $X$ não vazio e $\caligrafico{N}$ uma família de subconjuntos de $X$. 
+Quase todo mundo recebeu um nome, ficou faltando apenas a família \caligrafico{N}. Ela também receberá um nome, veremos o que ela precisa satisfazer para receber esse nome na definição a seguir.
 
 \begin{definition}[Sistema de vizinhança --- Neighbourhood system]
-	\label{def:sistema-de-vizinhanca}
-	Chamamos $\caligrafico{N}$ de um sistema de vizinhança no $X$ se, e somente se:
-	\begin{enumerate}[a)]
-	\item
-		\label{def:sistema-de-vizinhanca1}
-		Todo elemento $p \no X$ habita em pelo menos uma vizinhança $N \no \caligrafico{N}$. Mais formalmente, para todo $p \no X$, existe $N \in \caligrafico{N}$ tal que $p \no N$.
+\label{def:sistema-de-vizinhanca}
+Chamamos $\caligrafico{N}$ de um sistema de vizinhança no $X$ se, e somente se:
+\begin{itemize}
+\item[(NS1)]
+\label{def:sistema-de-vizinhanca1}
+	Todo ponto $p$ habita em pelo menos uma vizinhança $N$. Em fórmulas:
+	\begin{center}
+		($\paratodo p \no X$)%
+		($\existe N \no \caligrafico{N}$)%
+		[ $p \no N$ ]
+	\end{center}
 
-	\item
-		\label{def:sistema-de-vizinhanca2}
-		Se algum $p$ habita em duas vizinhanças $N_1$ e $N_2$, então deve existir uma terceira vizinhança $N \contido N_1 \inter N_2$ em que o $p$ habita. Mais formalmente, se $p \no N_1 \cap N_2$, então existe $N \contido N_1 \inter N_2$ tal que $p \no N$.
-\end{enumerate}
+\item[(NS2)]
+\label{def:sistema-de-vizinhanca2}
+	Quaisquer duas vizinhanças $N_1$, $N_2$ do $p$ intersetadas devem conter uma vizinhança $N \contido N_1 \inter N_2$ do $p$. Em fórmulas:
+	\begin{center}
+		($\paratodo N_1, N_2 \no \caligrafico{N}$)%
+		($\paratodo p \no N_1 \inter N_2$)%
+		($\existe N \no \caligrafico{N}$)%
+		[ $p \no N$ \& $N \contido N_1 \inter N_2$ ]
+	\end{center}
+\end{itemize}
 \end{definition}
 
-\begin{definition}[Espaço topológico --- Topological space]
-	Suponha que $\caligrafico{N}$ é um sistema de vizinhança no $X$, então chamamos a estrutura $\caligrafico{T} = (X ; \caligrafico{N})$ de espaço topológico.
+\begin{definition}
+	Se $\caligrafico{N}$ é um sistema de vizinhanças em $X$, então chamamos a estrutura $(X;\caligrafico{N})$ de um espaço topológico.
 \end{definition}
-
 
 \begin{definition}[Aberto --- Open]
-	Chamamos um subconjunto $O$ de $X$ de aberto se, e somente se, todos os seus elementos habitam em pelo menos uma vizinhança contida no $O$. Mais formalmente:
+	Chamamos um subconjunto $O$ de $X$ de aberto se, e somente se, todos os seus elementos possuem alguma vizinhança contida no $O$. Mais formalmente:
 	\begin{center}
-		$O$ é aberto \sse para todo $p \no O$, existe $N \no \caligrafico{N}$ tal que $p \no N$ e $N \contido O$.
+		$O$ é aberto \sse ($\paratodo p \no O$)($\existe N \no \caligrafico{N}$)[ $p \no N$ \& $N \contido O$ ].
 	\end{center}
 \end{definition}
 
 \begin{fact}
+	\label{vizinhanca-aberto}
 	Toda vizinhança é um conjunto aberto.
 \end{fact}
 
@@ -41,23 +62,49 @@ Considere $X$ não vazio e $\caligrafico{N}$ uma família de subconjuntos de $X$
 	Considere uma vizinhança $N \no \caligrafico{N}$. Tome um arbitrário $p \no N$. Agora basta mostrar que o $p$ habita em alguma vizinhança contido no $N$. Ora, como $N \contido N$, $N$ já é uma vizinhança e já temos que $p \no N$, então $N$ é aberto.
 \end{proof}
 
+\begin{question}
+	\label{universo-aberto}
+	\label{vazio-aberto}
+	O que dizer sobre os $X$ e $\vazio$? São abertos? Responda com "sim", "não" ou "depende" e justifique. No caso de "depende" mostre um exemplo e um não-exemplo.
+\end{question}
+
+\begin{answer}
+	Sim, ambos são abertos. Primeiramente mostremos que o $X$ é aberto
+	\begin{proof}
+		Precisamos mostrar que todo elemento do $X$ habita em pelo menos uma vizinhança $N \contido X$. Ora, isso é o que o próprio item~\ref{def:sistema-de-vizinhanca1} afirma. Sendo assim, o $X$ é aberto.
+	\end{proof}
+	Agora, demonstremos que o $\vazio$ é aberto.
+	\begin{proof}
+		Precisamos mostrar que todo elemento do $\vazio$ habita em pelo menos uma vizinhança $N \contido X$. O que já é verdade por vacuidade. Sendo assim o $\vazio$ é aberto.
+	\end{proof}
+\end{answer}
+
 \begin{definition}
-	A topologia gerada por \caligrafico{N} é a família \caligrafico{O} de todos os seus conjuntos abertos.
+	A topologia gerada por $\caligrafico{N}$ é a família $\caligrafico{O}_\caligrafico{N}$ de todos os seus conjuntos abertos.
+	\[
+		\caligrafico{O}_\caligrafico{N} = \conjunto{ O \contido X \tq \text{$O$ é aberto}}
+	\]
+\end{definition}
+
+\begin{definition}[Vizinhança punturada]
+	$A$ é uma vizinhança punturada de $p$ se, e somente se, $A \uniao \conjunto{p} \no \caligrafico{N}$ e $p \fora\no A$. Se $A$ é uma vizinhança punturada de $p$, denotamos $A$ como $\punturado{p}$.
 \end{definition}
 
 \begin{definition}[Limit point]
 	Dado $A \contido X$, dizemos que $p$ é um \textit{limit point} de $A$ se, e somente se, em toda vizinhança que o $p$ habita há pelo menos um elemento diferente do $p$ que também habita nela. Mais formalmente:
 	\begin{center}
-		$p$ é limit point de $A$ \sse todo $N$ que o $p$ habita tem um $q \no N$ tal que $q \neq p$. 
+		$p$ é limit point de $A$ \sse todo $N$ que o $p$ habita tem um $q \no N$ tal que $q \neq p$.
 	\end{center}
+
+	Se acontecer que $p$ não é um limit point de $A$, então existe uma vizinhança punturada $\punturado{p} \contido X$ tal que $\punturado{p} \inter A = \vazio$.
 \end{definition}
 
 \begin{definition}
-	Chamamos de $A^\linha$ o conjunto de todos os limit points de $A$.
+	Chamamos de $\limitpointsde{A}$ o conjunto de todos os limit points de $A$.
 \end{definition}
 
 \begin{definition}[Fechado --- Closed]
-	Seja $A \contido X$, chamamos o $A$ de fechado se, e somente se, $A$ possui todos os seus limit points. Em outras palavras, $A^\linha \contido A$.
+g	Seja $A \contido X$, chamamos o $A$ de fechado se, e somente se, $A$ possui todos os seus limit points. Em outras palavras, $\limitpointsde{A} \contido A$.
 \end{definition}
 
 \begin{question}
@@ -69,16 +116,16 @@ Considere $X$ não vazio e $\caligrafico{N}$ uma família de subconjuntos de $X$
 \begin{answer}
 	Ambos são fechados. Primeiramente, demonstremos que X é fechado.
 	\begin{proof}
-		Precisamos demonstrar que $X$ possui todos os seus limit points. Ora, como $X$ é o nosso universo, já temos que qualquer possível limit point de $X$ já habita no $X$. Sendo assim $X^\linha \contido X$.
+		Precisamos demonstrar que $X$ possui todos os seus limit points. Ora, como $X$ é o nosso universo, já temos que qualquer possível limit point de $X$ já habita no $X$. Sendo assim $\limitpointsde{X} \contido X$.
 	\end{proof}
 
 	Agora, demonstremos que o $\vazio$ é fechado.
 	\begin{proof}
-		Considere $p \no X$. Basta mostrar que $p$ não é limit point do $\vazio$. Note que, existe $N \no \caligrafico{N}$ tal que $p \no N$ pelo item~\ref{def:sistema-de-vizinhanca1}. E, como $N \inter \vazio = \vazio$, temos que os $N$ e $\vazio$ não partilham elementos diferentes do $p$. Portanto $\vazio^\linha \contido \vazio$.
+		Considere $p \no X$. Basta mostrar que $p$ não é limit point do $\vazio$. Note que, existe $N \no \caligrafico{N}$ tal que $p \no N$ pelo item~\ref{def:sistema-de-vizinhanca1}. E, como $N \inter \vazio = \vazio$, temos que os $N$ e $\vazio$ não partilham elementos diferentes do $p$. Portanto $\limitpointsde{\vazio} \contido \vazio$.
 	\end{proof}
 \end{answer}
 
-\begin{question}
+\begin{question}[Q1.16.]
 	Um conjunto unitário é fechado?
 \end{question}
 
@@ -92,6 +139,43 @@ Considere $X$ não vazio e $\caligrafico{N}$ uma família de subconjuntos de $X$
 
 	Agora, mostremos um caso que não é fechado.
 	\begin{proof}
-		Basta tomar seu universo como sendo $X = \conjunto{a,l}$, e o sistema de vizinhanças $\caligrafico{N} = \conjunto{X}$. Com isso, teremos que o conjunto unitário $A = \conjunto{a} \contido X$ não é fechado. Observe que $l$ é um limit point de $A$, pois a única vizinhança do $l$, que é o próprio $X$, partilha elementos de $A$ que não são o $l$, no caso o $a$. Porém, $b \fora\no A$. Portanto, o $A$ não é fechado mesmo sendo unitário.
+		Basta tomar seu universo como sendo $X = \conjunto{a,l}$, e o sistema de vizinhanças $\caligrafico{N} = \conjunto{X}$. Com isso, teremos que o conjunto unitário $A = \conjunto{a} \contido X$ não é fechado. Observe que $l$ é um limit point de $A$, pois a única vizinhança do $l$, que é o próprio $X$, partilha elementos de $A$ que não são o $l$, no caso o $a$. Porém, $l \fora\no A$. Portanto, o $A$ não é fechado mesmo sendo unitário.
 	\end{proof}
 \end{answer}
+
+\begin{definition}[Fecho de um conjunto --- Clojure]
+	Dado um conjunto $A \contido X$, chamamos de fecho de $A$ o conjunto formado de elementos de A com todos os seus limit points. O denotamos como $\fechado{A}$.
+	\[
+		\fechado{A} = A \uniao \limitpointsde{A}.
+	\]
+\end{definition}
+
+\begin{theorem}[Fechos são fechados]
+	Para todo conjunto $A \contido X$, temos que o $\fechado{A}$ é fechado.
+\end{theorem}
+
+\begin{definition}[Ponto interior]
+	Let $A$ be a set and $p \no A$ . We call $p$ an interior point of $A$ iff it has a neighborhood contained in $A$:
+	\begin{center}
+		$p$ é ponto interior de $A$ $\sse$ ($\existe N \no \caligrafico{N}$)[ $p \no N$ \& $N \contido A$ ].
+	\end{center}
+\end{definition}
+
+\begin{definition}
+	Dado um conjunto $A \contido X$, chamamos de interior de $A$ o conjunto formado por todos os pontos interiores de $A$. O denotamos como $\interiorde{A}$.
+	\[
+		\interiorde{A} = \conjunto{ i \no A \tq \text{$i$ é ponto interior de A} }
+	\]
+\end{definition}
+
+\begin{definition}
+	$\caligrafico{B}$ é uma base para $\caligrafico{O}$ (a topologia de $X$) se, e somente se:
+	\begin{enumerate}[a)]
+		\item $\caligrafico{B} \contido \caligrafico{O}$.
+		\item cada abeto pode ser escrito como uma uniao de elementos da base.
+	\end{enumerate}
+\end{definition}
+
+\begin{theorem}
+	Se $\caligrafico{B}$ é uma base para $O(X)$, então $\caligrafico{B}$ é um sistema de vizinhança para $X$ satisfazendo (NS1) e $O(\caligrafico{B}) = O(\caligrafico{N})$.
+\end{theorem}

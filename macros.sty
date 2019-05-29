@@ -7,12 +7,15 @@
 %
 
 \newcommand{\conjunto}[1]{\left\{#1\right\}}
-\newcommand{\talque}{\mid}
-\newcommand{\tq}{\talque}
+\newcommand{\tq}{\mid}
+\newcommand{\talque}{\tq}
 \newcommand{\sse}{\ensuremath{\Longleftrightarrow}\;}
 \newcommand{\diferentede}{\neq}
 \newcommand{\linha}{\prime}
 \newcommand{\caligrafico}[1]{\ensuremath{\mathcal{#1}}}
+
+\newcommand{\defeq}{\stackrel{\mathclap{\normalfont\mbox{def}}}{=}}
+\newcommand{\defsse}{\stackrel{\text{def}}{\sse}}
 
 %
 %	Operações e relações
@@ -26,7 +29,7 @@
 
 \newcommand{\uniao}{\cup}
 \newcommand{\inter}{\cap}
-\newcommand{\complementar}[1]{{#1}^C}
+\newcommand{\complemento}[1]{\widetilde{#1}}
 \newcommand{\menos}{\setminus}
 \newcommand{\partes}[1]{\caligrafico{P}\left(#1\right)}
 
@@ -44,3 +47,18 @@
 \newcommand{\naturais}{\mathbb{N}}
 \newcommand{\inteiros}{\mathbb{Z}}
 \newcommand{\reais}{\mathbb{R}}
+
+%
+%   Fórmulas
+%
+\newcommand{\existe}{\exists}
+\newcommand{\paratodo}{\forall}
+\newcommand{\temse}[1]{[\;#1\;]}
+
+%
+%   Topologia
+%
+\newcommand{\punturado}[1]{O^{-#1}}
+\newcommand{\limitpointsde}[1]{#1^{\linha}}
+\newcommand{\fechado}[1]{#1^{\frown}}
+\newcommand{\interiorde}[1]{#1^{\smile}}
