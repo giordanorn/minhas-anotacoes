@@ -1,12 +1,12 @@
-\newtheorem{theorem}{Teorema}[section]
-\newtheorem{corollary}{Corolário}[theorem]
-\newtheorem{lemma}[theorem]{Lema}
-
 \theoremstyle{definition}
-\newtheorem{definition}{Definição}
+\newtheorem{theorem}{Teorema}[chapter]
+\newtheorem{corollary}[theorem]{Corolário}
+\newtheorem{lemma}[theorem]{Lema}
+\newtheorem{definition}[theorem]{Definição}
 
 \theoremstyle{remark}
-\newtheorem{fact}[definition]{Fato}
-\newtheorem{question}[definition]{Pergunta}
+\newtheorem{fact}[theorem]{Fato}
 
+\newenvironment{question}{\noindent \textit{Pergunta.}}{}
 \newenvironment{answer}{\noindent \textit{Resposta.}}{}
+\newenvironment{example}{\noindent \textit{Exemplo.}}{}

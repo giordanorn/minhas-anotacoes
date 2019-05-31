@@ -10,12 +10,12 @@
 \newcommand{\tq}{\mid}
 \newcommand{\talque}{\tq}
 \newcommand{\sse}{\ensuremath{\Longleftrightarrow}\;}
-\newcommand{\diferentede}{\neq}
+\newcommand{\diferente}{\neq}
 \newcommand{\linha}{\prime}
 \newcommand{\caligrafico}[1]{\ensuremath{\mathcal{#1}}}
 
-\newcommand{\defeq}{\stackrel{\mathclap{\normalfont\mbox{def}}}{=}}
-\newcommand{\defsse}{\stackrel{\text{def}}{\sse}}
+%\newcommand{\defeq}{\stackrel{\mathclap{\normalfont\mbox{def}}}{=}}
+%\newcommand{\defsse}{\stackrel{\text{def}}{\sse}}
 
 %
 %	Operações e relações
@@ -28,10 +28,13 @@
 \newcommand{\contido}{\subseteq}
 
 \newcommand{\uniao}{\cup}
+\newcommand{\Uniao}{\bigcup}
 \newcommand{\inter}{\cap}
+\newcommand{\Inter}{\bigcap}
 \newcommand{\complemento}[1]{\widetilde{#1}}
 \newcommand{\menos}{\setminus}
 \newcommand{\partes}[1]{\caligrafico{P}\left(#1\right)}
+\newcommand{\familia}[1]{\conjunto{#1_{i}}_{i}}
 
 %
 %    Funções
@@ -53,12 +56,14 @@
 %
 \newcommand{\existe}{\exists}
 \newcommand{\paratodo}{\forall}
-\newcommand{\temse}[1]{[\;#1\;]}
+\newcommand{\implica}{\implies}
 
 %
 %   Topologia
 %
-\newcommand{\punturado}[1]{O^{-#1}}
-\newcommand{\limitpointsde}[1]{#1^{\linha}}
+\newcommand{\punturado}[1]{N_{-#1}}
+\newcommand{\limite}{\rightarrow}
+\newcommand{\derivado}[1]{#1^{\linha}}
 \newcommand{\fechado}[1]{#1^{\frown}}
-\newcommand{\interiorde}[1]{#1^{\smile}}
+\newcommand{\interior}[1]{#1^{\smile}}
+\newcommand{\topologia}[1]{\caligrafico{O}_{\caligrafico{#1}}}
