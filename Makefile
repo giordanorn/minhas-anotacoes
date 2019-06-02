@@ -43,3 +43,7 @@ cleanall: clean
 
 deploy:
 	cp $(OUTPUT_PATH)/$(DOCUMENT_NAME).pdf $(WEBSITE_PATH)/$(OUTPUT_NAME).pdf
+	cd $(WEBSITE_PATH) \
+	&& git add $(OUTPUT_NAME).pdf \
+	&& git commit -m "Arquivo das anotações atualizado" \
+	&& git push origin master

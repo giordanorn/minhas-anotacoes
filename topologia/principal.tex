@@ -18,28 +18,28 @@ Para começarmos a estudar os conceitos de topologia, precisamos de um conjunto 
 Quase todo mundo recebeu um nome, ficou faltando apenas a família \caligrafico{N}. Ela também receberá um nome, veremos o que ela precisa satisfazer para receber esse nome na definição a seguir.
 
 \begin{definition}[Sistema de vizinhança]
-\label{def:sistema-de-vizinhanca}
-Chamamos $\caligrafico{N}$ de um sistema de vizinhança no $X$ se, e somente se:
-\begin{itemize}
-\item[(NS1)]
-\label{def:sistema-de-vizinhanca1}
-	Todo ponto $p$ habita em pelo menos uma vizinhança $N$. Em fórmulas:
-	\begin{center}
-		($\paratodo p \no X$)%
-		($\existe N \no \caligrafico{N}$)%
-		[ $p \no N$ ]
-	\end{center}
+	\label{def:sistema-de-vizinhanca}
+	Chamamos $\caligrafico{N}$ de um sistema de vizinhança no $X$ se, e somente se:
+	\begin{description}
+		\item[(NS1)]
+		\label{def:sistema-de-vizinhanca1}
+		Todo ponto $p$ habita em pelo menos uma vizinhança $N$. Em fórmulas:
+		\begin{center}
+			($\paratodo p \no X$)%
+			($\existe N \no \caligrafico{N}$)%
+			[ $p \no N$ ]
+		\end{center}
 
-\item[(NS2)]
-\label{def:sistema-de-vizinhanca2}
-	Quaisquer duas vizinhanças $N_1$, $N_2$ do $p$ ao serem intersetadas devem conter uma vizinhança $N$ do $p$, isto é, $N \contido N_1 \inter N_2$. Em fórmulas:
-	\begin{center}
-		($\paratodo N_1, N_2 \no \caligrafico{N}$)%
-		($\paratodo p \no N_1 \inter N_2$)%
-		($\existe N \no \caligrafico{N}$)%
-		[ $p \no N$ \& $N \contido N_1 \inter N_2$ ]
-	\end{center}
-\end{itemize}
+		\item[(NS2)]
+		\label{def:sistema-de-vizinhanca2}
+		Quaisquer duas vizinhanças $N_1$, $N_2$ do $p$ ao serem intersetadas devem conter uma vizinhança $N$ do $p$, isto é, $N \contido N_1 \inter N_2$. Em fórmulas:
+		\begin{center}
+			($\paratodo N_1, N_2 \no \caligrafico{N}$)%
+			($\paratodo p \no N_1 \inter N_2$)%
+			($\existe N \no \caligrafico{N}$)%
+			[ $p \no N$ \& $N \contido N_1 \inter N_2$ ]
+		\end{center}
+	\end{description}
 \end{definition}
 
 \begin{definition}[Espaço topológico]
@@ -47,7 +47,7 @@ Chamamos $\caligrafico{N}$ de um sistema de vizinhança no $X$ se, e somente se:
 \end{definition}
 
 \begin{definition}[Aberto]
-\label{def:open}
+	\label{def:aberto}
 	Chamamos um conjunto $O \contido X$ de aberto em \caligrafico{N}, ou, simplesmente de aberto (quando o sistema de vizinhanças estiver implícito pelo contexto) se, e somente se, todos os seus elementos possuem alguma vizinhança contida no $O$. Mais formalmente:
 	\begin{center}
 		$O$ é aberto em \caligrafico{N} \sse
@@ -84,7 +84,7 @@ Chamamos $\caligrafico{N}$ de um sistema de vizinhança no $X$ se, e somente se:
 \end{answer}
 
 \begin{definition}[Topologia]
-\label{def:topologia}
+	\label{def:topologia}
 	A topologia gerada por $\caligrafico{N}$ é a família $\topologia{N}$ de todos os seus conjuntos abertos.
 	\[
 		\topologia{N} = \conjunto{ O \contido X \tq \text{$O$ é aberto em \caligrafico{N}}}
@@ -92,34 +92,46 @@ Chamamos $\caligrafico{N}$ de um sistema de vizinhança no $X$ se, e somente se:
 \end{definition}
 
 \begin{definition}[Vizinhança punturada]
-\label{def:vizinhanca-punturada}
+	\label{def:vizinhanca-punturada}
 	Sejam $A \contido X$ e $p \no X$. Definimos o predicado abaixo:
 	\begin{center}
 		$A$ é uma vizinhança punturada do $p$ $\sse$ $p \fora\no A$ \& $A \uniao \conjunto{p} \no \caligrafico{N}$.
 	\end{center}
 	\begin{example}
-		Dados um ponto $p \no X$ e uma vizinhança $N \no \caligrafico{N}$ do $p$, isto é, $p \no N$, denotamos o conjunto $\punturado{p} := N \menos \conjunto{p}$. Então $\punturado{p}$ é uma vizinhança punturada do $p$.	Observe que $p \fora\no \punturado{p}$ e $\punturado{p} \uniao \conjunto{p} = N \no \caligrafico{N}$.
-		Sendo assim, $\punturado{p}$ é uma vizinhança punturada do $p$.
+		Dados um ponto $p \no X$ e uma vizinhança $N \no \caligrafico{N}$ do $p$, isto é, $p \no N$, denotamos o conjunto $\punturado{N}{p} := N \menos \conjunto{p}$. Então $\punturado{N}{p}$ é uma vizinhança punturada do $p$. Observe que $p \fora\no \punturado{N}{p}$ e $\punturado{N}{p} \uniao \conjunto{p} = N \no \caligrafico{N}$.
+		Sendo assim, $\punturado{N}{p}$ é uma vizinhança punturada do $p$.
 	\end{example}
 \end{definition}
 
 \begin{definition}[Limite]
-\label{def:limit-point}
-	Dado $A \contido X$, dizemos que $l \no X$ é um limite de $A$ se, e somente se, toda vizinhança punturada do $l$ interseta o $A$. Mais formalmente:
+	\label{def:limit-point}
+	Dado $A \contido X$, dizemos que $l \no X$ é um limite de $A$ ou $A \limite l$ se, e somente se, toda vizinhança punturada do $l$ interseta o $A$. Mais formalmente:
 	\begin{center}
 		$A \limite l$ \sse
 			($\paratodo N \no \caligrafico{N}$)%
-			[ $l \no N \implica \punturado{l} \inter A \diferente \vazio$ ]
+			[ $l \no N \implica \punturado{N}{l} \inter A \diferente \vazio$ ]
 	\end{center}
 	A idéia é que você não consegue isolar o $l$ do $A$ com alguma vizinhança.
 \end{definition}
 
 \begin{definition}[Conjunto derivado]
-	Chamamos o conjunto de todos os limites de $A$ de conjunto derivado de $A$ e o denotamos como $\derivado{A}$.
+	\label{def:derivado}
+	Chamamos o conjunto de todos os limites de $A$ de conjunto derivado de $A$ e o denotamos como $\derivado{A}$. Isto é:
+	\[
+		\derivado{A} = \conjunto{ l \no X \tq A \limite l}
+	\]
 \end{definition}
 
 \begin{definition}[Fechado]
-	Seja $A \contido X$, chamamos o $A$ de fechado se, e somente se, $A$ possui todos os seus limites. Em outras palavras, $\derivado{A} \contido A$.
+	\label{def:fechado}
+	Seja $A \contido X$, chamamos o $A$ de fechado se, e somente se, o $A$ possui todos os seus limites. Em fórmulas:
+	\begin{center}
+		($\paratodo l \no X$)[ $A \limite l \implica l \no A$ ].
+	\end{center}
+	O que também pode ser visto da seguinte forma:
+	\[
+		\derivado{A} \contido A.
+	\]
 \end{definition}
 
 \begin{question}
@@ -131,11 +143,11 @@ Chamamos $\caligrafico{N}$ de um sistema de vizinhança no $X$ se, e somente se:
 \begin{answer}
 	Ambos são fechados. Primeiramente, demonstremos que X é fechado:
 	\begin{proof}
-		Precisamos demonstrar que $X$ possui todos os seus limites. Ora, como $X$ é o nosso universo, já temos que qualquer possível limite de $X$ já habita no $X$. Sendo assim $\derivado{X} \contido X$.
+		Precisamos demonstrar que $X$ possui todos os seus limites. Ora, como $X$ é o nosso universo, já temos que qualquer possível limite de $X$ já habita no $X$. Sendo assim, o $X$ é fechado.
 	\end{proof}
 	Agora, demonstremos que o $\vazio$ é fechado:
 	\begin{proof}
-		Considere $p \no X$. Basta mostrar que $p$ não é limite do $\vazio$. Note que, existe $N \no \caligrafico{N}$ tal que $p \no N$ pelo item~\ref{def:sistema-de-vizinhanca1}. E, como $N \inter \vazio = \vazio$, temos que os $N$ e $\vazio$ não partilham elementos diferentes do $p$. Portanto $\derivado{\vazio} \contido \vazio$.
+		Mostrarei que o $\vazio$ não possui limites. Para isso, seja $p \no X$. Mostrarei que $\vazio \nao\limite p$, isto é, $\derivado{\vazio} = \vazio$. Note que, existe $N \no \caligrafico{N}$ tal que $p \no N$. E, como $\punturado{N}{p} \inter \vazio = \vazio$, temos uma vizinhança punturada do $p$ que não partilha  elementos com o $\vazio$. Portanto $\vazio \nao\limite l$ e, com isso, concluímos que o $\vazio$ é fechado.
 	\end{proof}
 \end{answer}
 
@@ -150,7 +162,7 @@ Chamamos $\caligrafico{N}$ de um sistema de vizinhança no $X$ se, e somente se:
 	\end{proof}
 	Agora, mostremos um caso que não é fechado:
 	\begin{proof}
-		Basta tomar seu universo como sendo $X = \conjunto{a,l}$, e o sistema de vizinhanças $\caligrafico{N} = \conjunto{X}$. Com isso, teremos que o conjunto unitário $A = \conjunto{a} \contido X$ não é fechado. Observe que $l$ é um limite de $A$, pois a única vizinhança do $l$, que é o próprio $X$, partilha elementos de $A$ que não são o $l$, no caso o $a$. Porém, $l \fora\no A$. Portanto, o $A$ não é fechado mesmo sendo unitário.
+		Basta tomar seu universo como sendo $X = \conjunto{a,l}$, e o sistema de vizinhanças $\caligrafico{N} = \conjunto{X}$. Com isso, teremos que o conjunto unitário $A = \conjunto{a} \contido X$ não é fechado. Observe que $A \limite l$, pois a única vizinhança punturada do $l$, que é o $\punturado{X}{l} = \conjunto{a}$, partilha elementos de $A$, isto é, $\punturado{X}{l} \inter A \neq \vazio$ graças ao $a$. Porém, $l \fora\no A$. Portanto, o $A$ não é fechado mesmo sendo unitário.
 	\end{proof}
 \end{answer}
 
@@ -163,6 +175,7 @@ Chamamos $\caligrafico{N}$ de um sistema de vizinhança no $X$ se, e somente se:
 \end{question}
 
 \begin{definition}[Fecho de um conjunto]
+	\label{def:fecho}
 	Dado um conjunto $A \contido X$, chamamos de fecho de $A$ o conjunto formado de elementos de $A$ com todos os seus limites. O denotamos como $\fechado{A}$. Isto é:
 	\[
 		\fechado{A} = A \uniao \derivado{A}.
@@ -170,6 +183,7 @@ Chamamos $\caligrafico{N}$ de um sistema de vizinhança no $X$ se, e somente se:
 \end{definition}
 
 \begin{theorem}[Fechos são fechados]
+	\label{thm:fecho-fechado}
 	Para todo conjunto $A \contido X$, temos que o $\fechado{A}$ é fechado.
 \end{theorem}
 
@@ -178,7 +192,8 @@ Chamamos $\caligrafico{N}$ de um sistema de vizinhança no $X$ se, e somente se:
 \end{proof}
 
 \begin{definition}[Ponto interior]
-	Seja um conjunto $A$ e um ponto $p \no A$. Chamamos $p$ de um ponto interior de $A$ se, e somente se, o $p$ possui uma vizinhança contida no $A$:
+	\label{def:ponto-interior}
+	Seja um conjunto $A \contido X$ e um ponto $p \no A$. Chamamos $p$ de um ponto interior de $A$ se, e somente se, o $p$ possui uma vizinhança contida no $A$:
 	\begin{center}
 		$p$ é ponto interior de $A$ \sse
 			($\existe N \no \caligrafico{N}$)%
@@ -187,19 +202,34 @@ Chamamos $\caligrafico{N}$ de um sistema de vizinhança no $X$ se, e somente se:
 \end{definition}
 
 \begin{definition}[Interior de um conjunto]
+	\label{def:interior}
 	Dado um conjunto $A \contido X$, chamamos de interior de $A$ o conjunto formado por todos os pontos interiores de $A$. O denotamos como $\interior{A}$. Isto é:
 	\[
 		\interior{A} = \conjunto{ i \no A \tq \text{$i$ é ponto interior de $A$} }
 	\]
 \end{definition}
 
+\begin{fact}
+	\label{fact:interior-contido}
+	O interior de um conjunto está contido no conjunto, isto é, $\interior{A} \contido A$.
+\end{fact}
+
 \begin{theorem}[Interiores são abertos]
+	\label{thm:interior-aberto}
 	Para todo conjunto $A \contido X$, temos que o $\interior{A}$ é aberto.
 \end{theorem}
 
 \begin{proof}
-	Recorde a definição de aberto (\ref{def:aberto}). Precisamos mostrar que todo ponto $p \no \interior{A}$ possui uma vizinhança $N \contido \interior{A}$. Sendo assim, seja $p \no \interior{A}$, isto é, $p$ é um ponto interior de $A$. Então, existe uma vizinhança $N \contido A$ tal que $p \no N$. Com isso, o $\interior{A}$ satisfaz a condição de ser aberto, como queríamos demonstrar.
+	Precisamos mostrar que para todo interior $i \no \interior{A}$ existe uma vizinhança $N \contido \interior{A}$ do $i$, ou seja, $i \no N$. 
+	
+	Sendo assim, seja $i \no \interior{A}$, isto é, $i$ é um ponto interior de $A$. Então, existe uma vizinhança $N \contido A$ tal que $i \no N$. Observe que o $N$ é a vizinhança do $i$ que testemunha $N \contido \interior{A}$. Basta ver que não existem elementos do $N$ fora do $\interior{A}$, isto é, $N \contido \interior{A}$.
+	
+	De fato, observe que se $p \no N$, então $p$ é um ponto interior de $A$ pois $N \contido A$, ou seja $p \no \interior{A}$. Então, $N \contido \interior{A}$. Sendo assim, como achamos uma vizinhança $N$ do $i$ que satisfaz $N \contido \interior{A}$, temos que o $\interior{A}$ é aberto, como queríamos demonstrar.
 \end{proof}
+
+\begin{corollary}
+	Um conjunto $A$ é aberto se, e somente se $\interior{A} = A$.
+\end{corollary}
 
 \begin{question}
 	Se $p$ é um ponto interior de $A \inter B$, então $p$ é um ponto interior de $A$ e $p$ é um ponto interior de $B$?
@@ -210,17 +240,28 @@ Chamamos $\caligrafico{N}$ de um sistema de vizinhança no $X$ se, e somente se:
 \end{question}
 
 \begin{theorem}
-O complemento do interior é o fecho do complemento. Isto é, para qualquer $A \contido X$, vale:
-\[
-	\complemento{\interior{A}} = \derivado{\complemento{A}}
-\]
+	\label{thm:interior-fecho}
+	O complemento do interior é o fecho do complemento. Isto é, para qualquer $A \contido X$, vale:
+	\[
+		\complemento{\interior{A}} = \derivado{\complemento{A}}
+	\]
 \end{theorem}
 
 \begin{proof}
 	A fazer...
 \end{proof}
 
+\begin{definition}[Subconjunto aberto]
+	\label{def:subconjunto-aberto}
+	Um conjunto $Y$ é aberto no $A$ se, e somente se, existe um conjunto aberto $O$ tal que $Y = A \inter O$ . Também chamamos o $Y$ de um subconjunto aberto do $A$.
+\end{definition}
+
+\begin{question}
+	Todo subconjunto aberto de um conjunto é aberto?
+\end{question}
+
 \begin{definition}[Base]
+	\label{def:base}
 	Uma família $\caligrafico{B}$ de subconjuntos de $X$ é uma base para $\topologia{N}$ se, e somente se:
 	\begin{enumerate}[i)]
 		\item Todo membro do $\caligrafico{B}$ é aberto. Isto é, $\caligrafico{B} \contido \topologia{N}$.
