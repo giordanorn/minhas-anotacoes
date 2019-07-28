@@ -1,6 +1,2 @@
-## Minhas Anotações de Estudo
-Esse repositório mantém todas as minhas anotações de estudo em um livro escrito em LaTeX.
-
-O documento compilado está acessível na minha página fornecida pelo github (https://giordanorn.github.io/minhas-anotacoes.pdf).
-
-Escreverei mais detalhes futuramente.
+# Topologia
+Esse repositório mantém minhas anotações de estudo sobre Topologia.

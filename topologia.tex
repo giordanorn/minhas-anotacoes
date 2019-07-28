@@ -1,3 +1,15 @@
+\documentclass[a4paper,12pt,oneside]{book}
+\usepackage{packages}
+\usepackage{titlepage}
+\usepackage{macros}
+\usepackage{environments}
+
+\begin{document}
+\frontmatter
+\printtitlepage
+\tableofcontents
+
+\mainmatter
 \chapter{Topologia}
 Estas anotações estão fortemente relacionadas ao curso de topologia lecionado pelo professor Athanasios Thanos Tsouanas. O curso está sendo ofertado em uma turma do componente IMD0109 - Tópicos Epeciais em Tecnologia da Informação X no semestre 2019.1 na UFRN.
 
@@ -285,3 +297,4 @@ Quase todo mundo recebeu um nome, ficou faltando apenas a família \caligrafico{
 		\item[(NS2)] Sejam $B_1$, $B_2 \no \caligrafico{B}$ tais que $p \no B_1 \inter B_2$. Como $B_1$ é aberto, então existe $N_1 \contido B_1$ tal que $p \no N_1$. E, como $B_2$ é aberto, temos que existe $N_2 \contido B_2$ talque $p \no N_2$. Sendo assim, temos $p \no N_1 \inter N_2$. Então, existe $N \contido N_1 \inter N_2$ tal que $p \no N$. Sabemos que $N$ é aberto, então $N = \Uniao \familia{B}$ para alguma $\familia{B} \contido \caligrafico{B}$, pois $\caligrafico{B}$ é uma base para $\topologia{N}$. Sendo assim, $p \no B_i$ para algum $i \no \caligrafico{I}$. Com isso, temos $p \no B_i \contido \Uniao \familia{B} = N \contido B_1 \inter B_2$, como queríamos demonstrar.
 	\end{itemize}
 \end{proof}
+\end{document}
